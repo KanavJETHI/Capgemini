@@ -1,0 +1,15 @@
+package com.capg.springboot;
+
+@RestController
+public class MyController {
+	@RequestMapping("login.spring")
+	public String loginValid() {
+		return "Welcome to SpringBoot Application";
+	}
+	
+	@RequestMapping("ram.spring")
+	public String ramValid() {
+		return "Welcome to SpringBoot Application Ram";
+	}
+	
+}

@@ -1,0 +1,91 @@
+package com.springboot.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.*;
+
+@RestController
+public class MoviesController {
+	
+	@Autowired
+	MovieService ms;
+	
+	
+//	@PostMapping("/addmovies")
+//	public String addMovies(@RequestBody Movies movie) {
+//		ms.addMovies(movie);
+//		
+//		return movie.getId();
+//	}
+	
+	@PostMapping("/addmovies")
+	public ResponseEntity<String> addMovies(@RequestBody Movies movie) {
+
+	    ms.addMovies(movie);
+
+	    return new ResponseEntity<>("Movie Added Successfully", HttpStatus.CREATED);
+	}
+	
+	
+//	@GetMapping("/getmovies")
+//	public List<Movies> getAllMovies(){
+//		return ms.getAllMovies();
+//	}
+	
+	@GetMapping("/getmovies")
+	public ResponseEntity<List<Movies>> getAllMovies(){
+
+	    List<Movies> movies = ms.getAllMovies();
+
+	    return new ResponseEntity<>(movies, HttpStatus.OK);
+	}
+	
+//	@GetMapping("findmoviebyid/{id}")
+//	public Movies findById(@PathVariable String id) {
+//		return ms.findById(id);
+//	}
+	
+	@GetMapping("/findmoviebyid/{id}")
+	public ResponseEntity<Movies> findById(@PathVariable String id){
+
+	    Movies movie = ms.findById(id);
+
+	    return new ResponseEntity<>(movie, HttpStatus.OK);
+	}
+	
+	
+//	@DeleteMapping("/deletemovie/{id}")
+//	public void deleteMovie(@PathVariable String id) {
+//		ms.deleteMovie(id);
+//	}
+	
+	
+	@DeleteMapping("/deletemovie/{id}")
+	public ResponseEntity<String> deleteMovie(@PathVariable String id){
+
+	    ms.deleteMovie(id);
+
+	    return new ResponseEntity<>("Movie Deleted", HttpStatus.OK);
+	}
+	
+//	@PutMapping("/updatemovie")
+//	public Movies updateMovie(@RequestBody Movies movie) {
+//		return ms.updateMovie(movie);
+//	}
+	
+	@PutMapping("/updatemovie")
+	public ResponseEntity<String> updateMovie(@RequestBody Movies movie){
+		Movies updatedMovie = ms.updateMovie(movie);
+		
+		return new ResponseEntity<>("Movie updated", HttpStatus.OK);
+	}
+}

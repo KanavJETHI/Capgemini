@@ -1,0 +1,26 @@
+package com.capg.springboot;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import java.util.*;
+
+@RestController
+public class ProductController {
+	
+	@Autowired
+	ProductService ps;
+	
+	
+	@RequestMapping("login.spring")
+	public String validLogin() {
+		return "Welcome to products section";
+	}
+	
+	@RequestMapping("allProducts")
+	public List getProducts() {
+		return ps.getAllProducts();
+	}
+	
+
+}

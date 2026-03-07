@@ -1,0 +1,18 @@
+package com.capg.springboot.Controller;
+
+public class BookController {
+	@Autowired
+	BookService bookService;
+	
+	@PostMapping("/addbook")
+	public int addBook(@RequestBody Books books) {
+		bookService.addBook(books);
+		return books.getBookId();
+	}
+	
+	@GetMapping("/allBooks")
+	public List<Books> getAllBooks(){
+		return bookService.getAllBooks();
+	}
+	
+}

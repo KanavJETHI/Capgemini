@@ -1,0 +1,9 @@
+package com.springboot.exceptions;
+
+public class MyCustomException extends RunTimeException {
+	public MyCustomException(String message) {
+		super(message);
+	}
+}
+
+

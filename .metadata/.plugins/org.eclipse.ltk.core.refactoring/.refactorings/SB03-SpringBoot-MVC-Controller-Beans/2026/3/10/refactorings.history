@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;JavaTopics.java&apos; to &apos;SB04-SpringBoot-MVC-Service-JSON/src/main/java/com.capg.springboot&apos;&#x0D;&#x0A;- Original project: &apos;SB03-SpringBoot-MVC-Controller-Beans&apos;&#x0D;&#x0A;- Destination element: &apos;SB04-SpringBoot-MVC-Service-JSON/src/main/java/com.capg.springboot&apos;&#x0D;&#x0A;- Original element: &apos;com.capg.springboot.JavaTopics.java&apos;" description="Copy compilation unit" destination="=SB04-SpringBoot-MVC-Service-JSON/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.capg.springboot" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.capg.springboot{JavaTopics.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1772435515075" units="1" version="1.0"/>
+</session>

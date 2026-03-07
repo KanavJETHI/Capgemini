@@ -1,0 +1,15 @@
+package com.capg.springboot.Controller;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class CustomerService {
+	@Autowired
+	CustomerRepository cr;
+	
+	public void addCustomer(Customer customer) {
+		cr.save(customer);
+	}
+	
+	
+}

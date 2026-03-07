@@ -1,0 +1,29 @@
+package com.capg.springboot.Controller;
+
+public class StudentBean {
+	private int id;
+	private String name;
+	private String Subject;
+	
+	public StudentBean(int id, String name, String subject) {
+		this.id = id;
+		this.name = name;
+		Subject = subject;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getSubject() {
+		return Subject;
+	}
+	
+	
+	
+	
+}

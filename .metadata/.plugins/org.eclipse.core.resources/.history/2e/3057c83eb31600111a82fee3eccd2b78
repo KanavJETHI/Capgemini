@@ -1,0 +1,41 @@
+package com.capg.springboot.Controller;
+
+import org.springframework.stereotype.Service;
+import java.util.*;
+
+@Service
+public class StudentBeanService {
+	
+	List<StudentBean> studentList = new ArrayList<>(
+			Arrays.asList(
+					new StudentBean("1", "Kanav", "Maths"),
+					new StudentBean("2", "Anushka", "Science"),
+					new StudentBean("3", "ABC", "English"),
+					new StudentBean("4", "DEF", "Physics")
+					));
+	
+	List<StudentBean> newStudentList = new ArrayList<StudentBean>(studentList);
+	
+	public List<StudentBean> getAllStudents() {
+		return newStudentList;
+	}
+	
+	
+	public void addStudent(String id, String name, String subject) {
+		StudentBean s1 = new StudentBean(id, name, subject);
+		
+		newStudentList.add(s1);
+		
+	}
+	
+	
+	public void removeStudent(String id) {
+		studentList.removeIf(t -> ((StudentBean) t).getId().equals(id));	
+	}
+	
+	
+	
+	
+	
+	
+}

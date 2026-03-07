@@ -1,0 +1,10 @@
+package com.capg.springboot.Controller;
+
+@Service
+public class BookService {
+	
+	public void addBook() {
+		
+	}
+
+}

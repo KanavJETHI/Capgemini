@@ -1,0 +1,17 @@
+package com.capg.springboot;
+import java.util.*;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class JavaTopicsService {
+	
+	public List topics = Arrays.asList(new JavaTopics("JPA", "Hibernate", "JDBC"),
+									  (new JavaTopics("ReactJS", "JavaScript", "Web Development")),
+									  (new JavaTopics("Spring", "Spring MVC", "Spring Core"))
+			);
+	
+	public List<JavaTopics> getAllTopics(){
+		return topics;
+	}
+}

@@ -1,0 +1,6 @@
+package com.capg.springboot;
+
+@RestController
+public class ProductController {
+	
+}

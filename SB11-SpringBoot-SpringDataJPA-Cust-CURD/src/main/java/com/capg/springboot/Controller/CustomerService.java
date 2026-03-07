@@ -1,0 +1,37 @@
+package com.capg.springboot.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.stereotype.Service;
+import java.util.*;
+
+@Service
+public class CustomerService {
+	@Autowired
+	CustomerRepository cr;
+	
+	public void addCustomer(Customer customer) {
+		cr.save(customer);
+	}
+	
+	public List<Customer> getAllCustomers(){
+		List<Customer> customers = new ArrayList<Customer>();
+		
+		cr.findAll().forEach(c1 -> customers.add(c1));
+		System.out.println(customers);
+		return customers;
+	}
+	
+	public Customer findByID(int id) {
+		return cr.findById(id).get();
+	}
+	
+	public void update(Customer customer) {
+		cr.save(customer);
+	}
+	
+	public void deleteCustomer(int id) {
+		cr.deleteById(id);
+	}
+}
+

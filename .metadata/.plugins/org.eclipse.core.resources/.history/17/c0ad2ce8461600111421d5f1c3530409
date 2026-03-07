@@ -1,0 +1,21 @@
+package com.capg.springboot;
+
+import com.capg.springboot.Controller.StudentBeanController;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Sb08SpringBootSearchPostDeleteStudentHomeworkApplication {
+
+    private final Controller.StudentBeanController studentBeanController;
+
+    Sb08SpringBootSearchPostDeleteStudentHomeworkApplication(Controller.StudentBeanController studentBeanController) {
+        this.studentBeanController = studentBeanController;
+    }
+
+	public static void main(String[] args) {
+		SpringApplication.run(Sb08SpringBootSearchPostDeleteStudentHomeworkApplication.class, args);
+			System.out.println("Server started");
+	}
+
+}

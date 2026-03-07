@@ -1,0 +1,18 @@
+package com.capg.springboot.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class BookService {
+	
+	@Autowired
+	BooksRepository booksRepository;
+	
+	
+	
+	public void addBook(Books books) {
+		
+	}
+
+}

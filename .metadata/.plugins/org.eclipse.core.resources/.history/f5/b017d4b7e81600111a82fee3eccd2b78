@@ -1,0 +1,6 @@
+package com.capg.springboot.Controller;
+
+@Service
+public class CustomerService {
+
+}

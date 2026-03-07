@@ -1,0 +1,20 @@
+package com.capg.springboot;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class JavaTopicsController {
+	
+	@Autowired
+	JavaTopicsService topicsService;
+	
+	@RequestMapping("login.spring")
+	public String loginValid() {
+		return "Welcome to SpringBoot Application";
+	}
+	
+	@RequestMapping("/javatopics")
+	public List getAllTopics() {
+		return topicsService.getAllTopics();
+	}
+}

@@ -1,0 +1,50 @@
+package com.capg.springboot.Controller;
+
+import jakarta.persistence.Column;
+
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+
+@Entity
+@Table
+public class Customer {
+	@Id
+	@Column(name = "customerId", length=10)
+	private int custId;
+	
+	@Column(name = "name", length=10)
+	private String name;
+	
+	@Column(name = "address", length=30)
+	private String address;
+
+	public int getCustId() {
+		return custId;
+	}
+
+	public void setCustId(int custId) {
+		this.custId = custId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	
+	
+	
+}

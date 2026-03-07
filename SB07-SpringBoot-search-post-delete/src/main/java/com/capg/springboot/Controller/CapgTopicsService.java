@@ -1,0 +1,49 @@
+package com.capg.springboot.Controller;
+
+import java.util.Arrays;
+
+import java.util.List;
+import java.util.*;
+
+import org.springframework.stereotype.Service;
+
+
+
+@Service
+public class CapgTopicsService {
+	 List<CapgTopics> products = new ArrayList<>(
+		        Arrays.asList(
+		            new CapgTopics("1", "P1", "Good Product"),
+		            new CapgTopics("2", "P2", "Good Product"),
+		            new CapgTopics("3", "P3", "Bad Product"),
+		            new CapgTopics("4", "P4", "Bad Product")
+		        )
+		    );
+	
+	List<CapgTopics> myList = new ArrayList<CapgTopics>(products);
+	
+	public List<CapgTopics> getAllTopics(){
+		return myList;
+	}
+	
+	
+	
+	
+	public void addTopic(CapgTopics topic) {
+		myList.add(topic);
+	}
+	
+	public void deleteTopic(String id) {
+		products.removeIf(t -> ((CapgTopics) t).getId().equals(id));
+		
+	}
+	
+	public CapgTopics getTopic(String id) {
+		return (CapgTopics) products.stream().filter(t -> ((CapgTopics) t).getId().equals(id)).findFirst().get();
+		
+	}
+	
+}
+
+
+

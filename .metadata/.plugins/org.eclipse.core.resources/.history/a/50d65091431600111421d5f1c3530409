@@ -1,0 +1,20 @@
+package com.capg.springboot.Controller;
+
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Service
+public class StudentBeanService {
+	
+	@RequestMapping("/login.spring")
+	public String loginvalid() {
+		return "Welcome to Spring Student Class";
+	}
+	
+	
+	
+	
+	
+	
+	
+}

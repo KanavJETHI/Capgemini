@@ -1,0 +1,24 @@
+package com.capg.springboot.Controller;
+
+import org.springframework.stereotype.Service;
+import java.util.*;
+
+@Service
+public class StudentBeanService {
+	
+	List<StudentBean> studentList = new ArrayList<>(
+			Arrays.asList(
+					new StudentBean(1, "Kanav", "Maths"),
+					new StudentBean(2, "Anushka", "Science"),
+					new StudentBean(3, "ABC", "English"),
+					new StudentBean(4, "DEF", "Physics")
+					));
+	
+	
+	
+	
+	
+	
+	
+	
+}

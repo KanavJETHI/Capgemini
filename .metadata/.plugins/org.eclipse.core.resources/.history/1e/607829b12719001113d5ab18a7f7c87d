@@ -1,0 +1,52 @@
+package com.springboot.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import java.util.*;
+
+@Service
+public class MovieService {
+	
+	@Autowired
+	MoviesRepository mr;
+	
+	public String addMovies(Movies movie) {
+		mr.save(movie);
+		return movie.getId();
+	}
+	
+	
+	public List<Movies> getAllMovies(){
+		List<Movies> movies = new ArrayList<Movies>();
+		
+		mr.findAll().forEach(m1 -> movies.add(m1));
+		
+		return movies;
+	}
+	
+	
+	public Movies findById(String id) {
+		return mr.findById(id).get();
+	}
+	
+	public void deleteMovie(String id) {
+		mr.deleteById(id);
+	}
+	
+	public Movies updateMovie(Movies movie) {
+		Optional<Movies> m = mr.findById(movie.getId());
+		
+		if(m.isPresent()) {
+			Movies existingMovie = m.get();
+			existingMovie.setName(movie.getName());
+			existingMovie.setDescription(movie.getDescription());
+			return mr.save(existingMovie);
+		}
+		
+		return null;
+	}
+	
+	
+	
+	
+}

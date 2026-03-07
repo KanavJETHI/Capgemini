@@ -1,0 +1,41 @@
+package com.capg.springboot.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import java.util.*;
+
+@RestController
+public class CapgTopicsController {
+
+    @Autowired
+    CapgTopicsService topicService;
+
+    @RequestMapping("mycontroller")
+    public String display() {
+        return "My Controller";
+    }
+
+    // GET all topics
+    @RequestMapping("/capgtopics")
+    public List<CapgTopics> getTopics() {
+        return topicService.getAllTopics();
+    }
+
+    // GET topic by id
+    @RequestMapping("/capgtopics/{id}")
+    public CapgTopics getTopic(@PathVariable String id) {
+        return topicService.getTopic(id);
+    }
+
+    // ADD topic
+    @RequestMapping(method = RequestMethod.POST, value = "/capgtopics")
+    public void addTopics(@RequestBody CapgTopics topic) {
+        topicService.addTopic(topic);
+    }
+
+    // DELETE topic
+    @RequestMapping(method = RequestMethod.DELETE, value = "/capgtopics/{id}")
+    public void deleteTopics(@PathVariable String id) {
+        topicService.deleteTopic(id);
+    }
+}
